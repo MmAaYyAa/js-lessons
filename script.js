@@ -65,8 +65,9 @@ function handleSubmit(event) {
   console.log(query.value, options.value);
 
   const result = cars.filter(
-    (car) =>
-      car[options.value].toLowerCase() === query.value.toLowerCase().trim()
+    (
+      car //когда нужно получить значение ключа и оно приходит как строка ставим [] или вынести в переменную и тогда эту переменную в []
+    ) => car[options.value].toLowerCase() === query.value.toLowerCase().trim()
   );
 
   refs.list.innerHTML = createMarkup(result);
